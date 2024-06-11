@@ -90,5 +90,4 @@ document.getElementById('apiButton').addEventListener('click', async () => {
         document.getElementById('responseDisplay').innerText = 'Error triggering build';
     }
 });
-
-'''
+```
