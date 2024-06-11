@@ -67,7 +67,7 @@ Example HTML and JavaScript to Trigger Jenkins Job
     <script src="app.js"></script>
 </body>
 </html>
-'''
+```
 
 ### app.js
 
