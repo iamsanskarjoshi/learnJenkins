@@ -21,7 +21,7 @@ from requests.auth import HTTPBasicAuth
 
 # Jenkins credentials
 username = 'sanskar'
-api_token = '1179e500a9f2b218b3ea44292d892bd4f4'
+api_token = '<your token>'
 
 # Jenkins job URL
 jenkins_url = 'http://localhost:8080/job/test/build'
