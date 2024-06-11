@@ -35,3 +35,60 @@ else:
     print(f'Failed to trigger job. Status code: {response.status_code}')
 
 ```
+### Build Authorization Token Root Plugin
+
+After installing this plugin:
+
+
+Go to the job configuration page for the job you want to build.
+
+Scroll down to the option Trigger builds remotely (e.g., from scripts).
+
+Enter an authentication token, e.g., 12345.
+
+Use the following URL to build the job: http://localhost:8080/buildByToken/build?job=test&token=12345.
+
+Example HTML and JavaScript to Trigger Jenkins Job
+
+### html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Call Example</title>
+</head>
+<body>
+    <h1>API Call Example</h1>
+    <button id="apiButton">Click Me</button>
+    <p id="responseDisplay"></p>
+    <script src="app.js"></script>
+</body>
+</html>
+'''
+
+### app.js
+
+
+```javascript
+
+document.getElementById('apiButton').addEventListener('click', async () => {
+    const jenkinsUrl = 'http://localhost:8080/buildByToken/build?job=test&token=12345';
+    try {
+        const response = await fetch(jenkinsUrl, {
+            method: 'POST'
+        });
+        if (response.ok) {
+            document.getElementById('responseDisplay').innerText = 'done';
+        } else {
+            document.getElementById('responseDisplay').innerText = 'Failed to trigger build';
+        }
+    } catch (error) {
+        console.error('Error triggering build:', error);
+        document.getElementById('responseDisplay').innerText = 'Error triggering build';
+    }
+});
+
+'''
